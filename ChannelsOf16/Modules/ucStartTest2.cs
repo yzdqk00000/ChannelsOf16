@@ -38,7 +38,7 @@ namespace 延迟线收发组件_十六通道.Modules
                     List衰减.Add(i + "dB");
                 }
                 //移相选择项目初始化
-                for (int i = 0; i <= 64; i++)
+                for (int i = 0; i < 64; i++)
                 {
                     List移相.Add(i * 5.625 + "°");
                 }

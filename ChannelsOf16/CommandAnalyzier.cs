@@ -15,7 +15,7 @@ namespace 延迟线收发组件_十六通道
             //帧头+功能位校验位+帧尾
             byte CHK = 0X00;
             byte[] LAST = new byte[] { 0xee, 0xbb };
-            byte[] HEADER = new byte[] { 0xff,0xaa,0x13,0x01,0x00};
+            byte[] HEADER = new byte[] { 0xff,0xaa,0x00,0x25,0x01,0x00};
             byte[] COMMAND = new byte[] { 0x01,0x00 };
             OUTPUT.AddRange(HEADER);
             OUTPUT.AddRange(COMMAND);

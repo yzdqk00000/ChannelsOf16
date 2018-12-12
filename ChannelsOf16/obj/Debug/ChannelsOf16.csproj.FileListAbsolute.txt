@@ -88,3 +88,8 @@ E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件-十�
 E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件_十六通道.Properties.Resources.resources
 E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件_十六通道.MainForm.resources
 E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件_十六通道.Modules.ucStartTest2.resources
+E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\bin\Debug\延迟线收发组件-十六通道测试软件.exe.manifest
+E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\bin\Debug\延迟线收发组件-十六通道测试软件.application
+E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件-十六通道测试软件.TrustInfo.xml
+E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件-十六通道测试软件.exe.manifest
+E:\[Catalog]_TEST\ChannelsOf16\ChannelsOf16\obj\Debug\延迟线收发组件-十六通道测试软件.application
