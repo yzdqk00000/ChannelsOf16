@@ -7,14 +7,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="延迟线收发组件-十六通道测试软件.exe.manifest" size="51604">
+    <dependentAssembly dependencyType="install" codebase="延迟线收发组件-十六通道测试软件.exe.manifest" size="51605">
       <assemblyIdentity name="延迟线收发组件-十六通道测试软件.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>O+TAEt5iUy9VKZkfmI5gNWic+9c=</dsig:DigestValue>
+        <dsig:DigestValue>CoVgtFYx0ioAW+6YzGMNMpXxvXM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

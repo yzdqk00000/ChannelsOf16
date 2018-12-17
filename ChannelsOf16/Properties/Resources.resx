@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bringforward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bringforward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stretch_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stretch_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="linewithmarkers_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linewithmarkers_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="squeeze_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\squeeze_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sendfile_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sendfile_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +136,8 @@
   <data name="reset_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reset_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stretch_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stretch_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="splinearea_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splinearea_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconsetquarters5_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconsetquarters5_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,9 +150,6 @@
   </data>
   <data name="next_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="splinearea_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\splinearea_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alignhorizontalcenter_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alignhorizontalcenter_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,13 +169,16 @@
   <data name="area_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\area_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="number_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\number_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="timelineview_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timelineview_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bringforward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bringforward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="squeeze_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\squeeze_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="number_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\number_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alignverticalcenter2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignverticalcenter2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

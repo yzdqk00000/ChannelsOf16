@@ -83,6 +83,16 @@ namespace 延迟线收发组件_十六通道.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap alignverticalcenter2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("alignverticalcenter2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap area_32x32 {
             get {
                 object obj = ResourceManager.GetObject("area_32x32", resourceCulture);

@@ -495,9 +495,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_衰减;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_移相;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch_通道开关;
         private DevExpress.XtraEditors.SimpleButton simpleButton_一键设置;
@@ -513,11 +511,13 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_延时;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch_子阵开关;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_衰减;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_移相;
+        public DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_延时;
     }
 }

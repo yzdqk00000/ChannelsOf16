@@ -834,14 +834,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="延迟线收发组件-十六通道测试软件.exe" size="616288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="延迟线收发组件-十六通道测试软件.exe" size="954720">
       <assemblyIdentity name="延迟线收发组件-十六通道测试软件" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>f27Pzdf0B80J0ZKJVkJqSeFU3F0=</dsig:DigestValue>
+        <dsig:DigestValue>3C1tnaXeAnFJd90ihMyzYle1WMg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -854,13 +854,13 @@
       <dsig:DigestValue>PQaRlC8GTWHZIGBrrs63q0o0QTs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="延迟线收发组件-十六通道测试软件.exe.config" size="821">
+  <file name="延迟线收发组件-十六通道测试软件.exe.config" size="1052">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uNjRwPJK6uWP844Dy/DkURIiBdM=</dsig:DigestValue>
+      <dsig:DigestValue>+ZPJCaje1ROiO5twtjGspjAHq7g=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

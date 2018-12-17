@@ -111,6 +111,46 @@
   <ItemGroup>
     <Compile Include="CommandAnalyzier.cs" />
     <Compile Include="Function_Module.cs" />
+    <Compile Include="InstrLibrary\InstrDriver\AGT\agvisa32.cs" />
+    <Compile Include="InstrLibrary\InstrDriver\AGT\visa32.cs" />
+    <Compile Include="InstrLibrary\InstrDriver\InstrBase.cs" />
+    <Compile Include="InstrLibrary\InstrDriver\SCPIBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\CETC41-41所\NetWorkAnalyzerSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\Keysight-是德科技\AGT872ES_SCPI.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\Keysight-是德科技\N9030B.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\Keysight-是德科技\NetWorkAnalyzerSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\Keysight-是德科技\NXXXX.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\NetWorkAnalyzerBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NetWorkAnalyzer-矢网\RS-罗德与施瓦茨\NetWorkAnalyzerSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NoiseMeter-噪声仪\CETC41-41所\NoiseMeterSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NoiseMeter-噪声仪\Keysight-是德科技\NoiseMeterSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NoiseMeter-噪声仪\NoiseMeterBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\NoiseMeter-噪声仪\RS-罗德与施瓦茨\NoiseMeterSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\Oscilloscope-示波器\CETC41-41所\OscilloscopeSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\Oscilloscope-示波器\Keysight-是德科技\OscilloscopeSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\Oscilloscope-示波器\OscilloscopeBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\Oscilloscope-示波器\RS-罗德与施瓦茨\OscilloscopeSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerMeter-功率计\CETC41-41所\PowerMeterSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerMeter-功率计\Keysight-是德科技\PowerMeterSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerMeter-功率计\PowerMeterBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerMeter-功率计\RS-罗德与施瓦茨\PowerMeterSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerSupply-程控电源\GW-固纬\PowerSupplySCPIBase_GW_PPT.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerSupply-程控电源\GW-固纬\PowerSupplySCPIBase_GW_PSW.cs" />
+    <Compile Include="InstrLibrary\InstrObject\PowerSupply-程控电源\PowerSupplyBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalAnalyzer-信号分析仪\CETC41-41所\SignalAnalyzerSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalAnalyzer-信号分析仪\Keysight-是德科技\SignalAnalyzerSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalAnalyzer-信号分析仪\RS-罗德与施瓦茨\SignalAnalyzerSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalAnalyzer-信号分析仪\SignalAnalyzerBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalGenerator-信号源%28射频微波信号发生器%29\CETC41-41所\SignalGeneratorSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalGenerator-信号源%28射频微波信号发生器%29\Keysight-是德科技\SignalGeneratorSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalGenerator-信号源%28射频微波信号发生器%29\RS-罗德与施瓦茨\SignalGeneratorSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SignalGenerator-信号源%28射频微波信号发生器%29\SignalGeneratorBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SpectrumAnalyzer-频谱仪\CETC41-41所\SpectrumAnalyzerSCPIBase_CETC41.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SpectrumAnalyzer-频谱仪\Keysight-是德科技\SpectrumAnalyzerSCPIBase_Keysight.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SpectrumAnalyzer-频谱仪\RS-罗德与施瓦茨\SpectrumAnalyzerSCPIBase_RS.cs" />
+    <Compile Include="InstrLibrary\InstrObject\SpectrumAnalyzer-频谱仪\SpectrumAnalyzerBase.cs" />
+    <Compile Include="InstrLibrary\InstrObject\WaveformGenerator-波形发生器\Rigol-普源\WaveformGeneratorSCPIBase_Rigol.cs" />
+    <Compile Include="InstrLibrary\InstrObject\WaveformGenerator-波形发生器\WaveformGeneratorBase.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +162,12 @@
     </Compile>
     <Compile Include="Modules\BaseModule.Designer.cs">
       <DependentUpon>BaseModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataModule.Designer.cs">
+      <DependentUpon>DataModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Model\TestModel2.cs" />
     <Compile Include="Modules\Model\Test子阵Model.cs" />
@@ -136,6 +182,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataModule.resx">
+      <DependentUpon>DataModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ucStartTest2.resx">
       <DependentUpon>ucStartTest2.cs</DependentUpon>
@@ -228,6 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\alignverticalcenter2_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

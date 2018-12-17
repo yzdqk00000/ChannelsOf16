@@ -16,14 +16,15 @@ namespace 延迟线收发组件_十六通道.Modules
     {
         public List<TestModel2> ListTestModel = new List<TestModel2>();
         public List<Test子阵Model> List子阵Model = new List<Test子阵Model>();
-
+        DataModule _Datamodule;
         List<string> List延时 = new List<string>();
         List<string> List衰减 = new List<string>();
         List<string> List移相 = new List<string>();
 
-        public ucStartTest2()
+        public ucStartTest2(DataModule datamodule)
         {
             InitializeComponent();
+            _Datamodule = datamodule;
 
             if (Function_Module.GetConfig("模式") == "DEBUG")
             {
@@ -179,8 +180,9 @@ namespace 延迟线收发组件_十六通道.Modules
         }
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
+        {       
             int[] select = gridView1.GetSelectedRows();
+            _Datamodule.textEdit_采集通道.Text = (select[0] + 1).ToString();
             if (select.Length>1)
             {
                 gridView2.ClearSelection();
