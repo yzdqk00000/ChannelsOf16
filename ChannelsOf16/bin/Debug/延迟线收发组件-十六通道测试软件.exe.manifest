@@ -834,14 +834,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="延迟线收发组件-十六通道测试软件.exe" size="614752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="延迟线收发组件-十六通道测试软件.exe" size="616288">
       <assemblyIdentity name="延迟线收发组件-十六通道测试软件" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>BhMouPs28z5e5NU/b5ioQUmdu9E=</dsig:DigestValue>
+        <dsig:DigestValue>f27Pzdf0B80J0ZKJVkJqSeFU3F0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

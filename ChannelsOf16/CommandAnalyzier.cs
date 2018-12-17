@@ -30,7 +30,15 @@ namespace 延迟线收发组件_十六通道
                 string 移相 = Reverse(Convert.ToString(Convert.ToInt32(Convert.ToDecimal(model.移相.Split('°')[0]) / 5.625m),2).PadLeft(6, '0'));
 
                 string 通道开关 = model.通道开关?"1":"0";
-                string 子阵开关  = list子阵Model[(Convert.ToInt32(model.通道号)-1)/2].子阵开关?"1":"0";
+                string 子阵开关 = "0";
+                if ((Convert.ToInt32(model.通道号) <= 4))
+                {
+                    子阵开关 = list子阵Model[(Convert.ToInt32(model.通道号) - 1)].子阵开关 ? "1" : "0";
+                }
+                else if (Convert.ToInt32(model.通道号) >= 9 && Convert.ToInt32(model.通道号) <= 12)
+                {
+                    子阵开关 = list子阵Model[(Convert.ToInt32(model.通道号) - 5)].子阵开关 ? "1" : "0";
+                }
 
                 sum += 衰减 + 移相 + 通道开关 + 子阵开关;
 
