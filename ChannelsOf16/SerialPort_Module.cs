@@ -57,11 +57,29 @@ namespace 延迟线收发组件_十六通道
             try
             {
                 sp.Write(sendBytes, 0, sendBytes.Length);
-                _RichTextBox.AppendText("发送："+Function_Module.RecvProgress_STR(sendBytes) + "\n");
+                if (_RichTextBox.InvokeRequired)
+                {
+                    _RichTextBox.Invoke(new EventHandler(delegate {
+                        _RichTextBox.AppendText("发送：" + Function_Module.RecvProgress_STR(sendBytes) + "\n");
+                    }));
+                }
+                else
+                {
+                    _RichTextBox.AppendText("发送：" + Function_Module.RecvProgress_STR(sendBytes) + "\n");
+                }            
             }
             catch (Exception ex)
             {
-                _RichTextBox.AppendText("发送：" + ex.Message + "\n");
+                if (_RichTextBox.InvokeRequired)
+                {
+                    _RichTextBox.Invoke(new EventHandler(delegate {
+                        _RichTextBox.AppendText("发送：" + ex.Message + "\n");
+                    }));
+                }
+                else
+                {
+                    _RichTextBox.AppendText("发送：" + ex.Message + "\n");
+                }       
             }
         }
 

@@ -15,9 +15,10 @@ namespace 延迟线收发组件_十六通道
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        public BaseModule _Module;
-        public DataModule _DataModule;
-        public SerialPort_Module SerialPort;
+        public BaseModule _Module;               //当前加载的模块
+        public DataModule _DataModule;           //外部数据采集模块
+        public SerialPort_Module SerialPort;     //串口通信模块
+        private Thread _AutoThread;
 
         public MainForm()
         {
@@ -25,11 +26,14 @@ namespace 延迟线收发组件_十六通道
     
             dockPanel.ClosingPanel += DockPanel_ClosingPanel;
 
+            //打开串口
             textEdit_串口号.Text = Function_Module.GetConfig("串口号");
             SerialPort = new SerialPort_Module(richTextBox1);
             SerialPortControl(true);
 
             _DataModule = new DataModule();
+
+            //开始测试模块
             ucStartTest2 ucstart = CreateModule("延迟线收发组件_十六通道.Modules.ucStartTest2", _DataModule) as ucStartTest2;   
         }
 
@@ -78,10 +82,63 @@ namespace 延迟线收发组件_十六通道
                 case "消息展示(E)":
                     DockPanelShowControl();
                     break;
+                case "自动发送":
+                   _AutoThread = new Thread(AutoStart);
+                   _AutoThread.IsBackground = true;
+                   _AutoThread.Start();
+                   e.Button.Properties.Caption = "停止";
+
+                    break;
+                case "停止":
+                    _AutoThread.Abort();
+                    e.Button.Properties.Caption = "自动发送";
+                    break;
                 default:
                     break;
             }
            
+        }
+
+        public void AutoStart()
+        {
+            (_Module as ucStartTest2).Traverse初始化();
+            (_Module as ucStartTest2).gridView1.RefreshData();
+            (_Module as ucStartTest2).gridView2.RefreshData();
+            Thread.Sleep(100);
+            for (int i = 0; i < (_Module as ucStartTest2).List移相.Count; i++)
+            {
+                (_Module as ucStartTest2).Traverse移相((_Module as ucStartTest2).List移相[i]);
+                (_Module as ucStartTest2).gridView1.RefreshData();
+                (_Module as ucStartTest2).gridView2.RefreshData();
+                Thread.Sleep(100);
+                SendCommands();
+            }
+
+            (_Module as ucStartTest2).Traverse初始化();
+            (_Module as ucStartTest2).gridView1.RefreshData();
+            (_Module as ucStartTest2).gridView2.RefreshData();
+            Thread.Sleep(100);
+            for (int i = 0; i < (_Module as ucStartTest2).List衰减.Count; i++)
+            {
+                (_Module as ucStartTest2).Traverse衰减((_Module as ucStartTest2).List衰减[i]);
+                (_Module as ucStartTest2).gridView1.RefreshData();
+                (_Module as ucStartTest2).gridView2.RefreshData();
+                Thread.Sleep(100);
+                SendCommands();
+            }
+
+            (_Module as ucStartTest2).Traverse初始化();
+            (_Module as ucStartTest2).gridView1.RefreshData();
+            (_Module as ucStartTest2).gridView2.RefreshData();
+            Thread.Sleep(100);
+            for (int i = 0; i < (_Module as ucStartTest2).List延时.Count; i++)
+            {
+                (_Module as ucStartTest2).Traverse延迟((_Module as ucStartTest2).List延时[i]);
+                (_Module as ucStartTest2).gridView1.RefreshData();
+                (_Module as ucStartTest2).gridView2.RefreshData();
+                Thread.Sleep(100);
+                SendCommands();
+            }
         }
 
         /// <summary>
@@ -118,17 +175,20 @@ namespace 延迟线收发组件_十六通道
         /// </summary>
         private void DockPanelShowControl()
         {
-            if (IsShowMsg == false)
-            {
-                dockPanel.Show();
+            this.Invoke(new EventHandler(delegate {
+                if (IsShowMsg == false)
+                {
+                    dockPanel.Show();
 
-                IsShowMsg = true;
-            }
-            else
-            {
-                dockPanel.Hide();
-                IsShowMsg = false;
-            }
+                    IsShowMsg = true;
+                }
+                else
+                {
+                    dockPanel.Hide();
+                    IsShowMsg = false;
+                }
+            }));
+
         }
 
         /// <summary>
@@ -141,6 +201,7 @@ namespace 延迟线收发组件_十六通道
           
             SerialPort.SerialPort_Send(CommandAnalyzier.Writer((_Module as ucStartTest2).ListTestModel, (_Module as ucStartTest2).List子阵Model));
 
+            //构造路径
             _DataModule.AddPath((_Module as ucStartTest2).repositoryItemComboBox_移相.Items.IndexOf((_Module as ucStartTest2).ListTestModel[Convert.ToInt32(_DataModule.textEdit_采集通道.Text)-1].移相).ToString());
             if (Convert.ToInt32(_DataModule.textEdit_采集通道.Text) <= 4)
             {
@@ -152,12 +213,15 @@ namespace 延迟线收发组件_十六通道
             }
             _DataModule.AddPath((_Module as ucStartTest2).repositoryItemComboBox_衰减.Items.IndexOf((_Module as ucStartTest2).ListTestModel[Convert.ToInt32(_DataModule.textEdit_采集通道.Text) - 1].衰减).ToString());
 
-            Thread.Sleep(Convert.ToInt32(_DataModule.textEdit_采集延时.Text));
-            if (!_DataModule.SaveS2p(_DataModule.GetPath()))
+            if (_DataModule.toggleSwitch_开关.IsOn)
             {
-                AppendTexxt("提示：","数据采集失败，检查矢网连接");
+                Thread.Sleep(Convert.ToInt32(_DataModule.textEdit_采集延时.Text));
+                if (!_DataModule.SaveS2p(_DataModule.GetPath()))
+                {
+                    AppendTexxt("提示：", "数据采集失败，检查矢网连接");
+                }
+                Thread.Sleep(Convert.ToInt32(_DataModule.textEdit_采集延时.Text));
             }
-           
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -240,6 +304,19 @@ namespace 延迟线收发组件_十六通道
                 dockPanel_数据采集模块.Show();
             }
         
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

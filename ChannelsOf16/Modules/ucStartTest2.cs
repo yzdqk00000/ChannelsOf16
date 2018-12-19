@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace 延迟线收发组件_十六通道.Modules
 {
@@ -16,15 +17,18 @@ namespace 延迟线收发组件_十六通道.Modules
     {
         public List<TestModel2> ListTestModel = new List<TestModel2>();
         public List<Test子阵Model> List子阵Model = new List<Test子阵Model>();
-        DataModule _Datamodule;
-        List<string> List延时 = new List<string>();
-        List<string> List衰减 = new List<string>();
-        List<string> List移相 = new List<string>();
+    
+        public List<string> List延时 = new List<string>();
+        public List<string> List衰减 = new List<string>();
+        public List<string> List移相 = new List<string>();
+
+
+        private DataModule _DataModule;
 
         public ucStartTest2(DataModule datamodule)
         {
             InitializeComponent();
-            _Datamodule = datamodule;
+            _DataModule = datamodule;
 
             if (Function_Module.GetConfig("模式") == "DEBUG")
             {
@@ -32,7 +36,6 @@ namespace 延迟线收发组件_十六通道.Modules
                 {
                     List延时.Add(i + "λ");
                 }
-
                 //延时
                 for (decimal i = 0; i < 32; i = i + 0.5m)
                 {
@@ -69,17 +72,20 @@ namespace 延迟线收发组件_十六通道.Modules
                             子阵开关 = false,
                         });
                     }
-
                 }
             }
             else
             {
-                repositoryItemComboBox_延时.Items.AddRange(Function_Module.GetConfig("延迟").Split(';'));
-                repositoryItemComboBox_衰减.Items.AddRange(Function_Module.GetConfig("衰减").Split(';'));
-                repositoryItemComboBox_移相.Items.AddRange(Function_Module.GetConfig("移相").Split(';'));
-                comboBoxEdit_延时.Properties.Items.AddRange(Function_Module.GetConfig("延迟").Split(';'));
-                comboBoxEdit_移相.Properties.Items.AddRange(Function_Module.GetConfig("移相").Split(';'));
-                comboBoxEdit_衰减.Properties.Items.AddRange(Function_Module.GetConfig("衰减").Split(';'));
+                List延时.AddRange(Function_Module.GetConfig("延迟").Split(';'));
+                List移相.AddRange(Function_Module.GetConfig("移相").Split(';'));
+                List衰减.AddRange(Function_Module.GetConfig("衰减").Split(';'));
+                repositoryItemComboBox_延时.Items.AddRange(List延时);
+                repositoryItemComboBox_衰减.Items.AddRange(List衰减);
+                repositoryItemComboBox_移相.Items.AddRange(List移相);
+                comboBoxEdit_延时.Properties.Items.AddRange(List延时);
+                comboBoxEdit_移相.Properties.Items.AddRange(List移相);
+                comboBoxEdit_衰减.Properties.Items.AddRange(List衰减);
+
                 comboBoxEdit_延时.SelectedIndex = 0;
                 comboBoxEdit_移相.SelectedIndex = 0;
                 comboBoxEdit_衰减.SelectedIndex = 0;
@@ -106,6 +112,36 @@ namespace 延迟线收发组件_十六通道.Modules
 
             gridControl1.DataSource = ListTestModel;
             gridControl2.DataSource = List子阵Model;
+        }
+
+        public void Traverse移相(string value)
+        {
+            int Current通道 = Convert.ToInt32(_DataModule.textEdit_采集通道.Text);
+            ListTestModel[Current通道 - 1].移相 = value;
+
+        }
+        public void Traverse衰减(string value)
+        {
+            int Current通道 = Convert.ToInt32(_DataModule.textEdit_采集通道.Text);
+            ListTestModel[Current通道 - 1].衰减 = value;
+        }
+
+        public void Traverse延迟(string value)
+        {
+            int Current通道 = Convert.ToInt32(_DataModule.textEdit_采集通道.Text);
+
+            List子阵Model[(Convert.ToInt32(Current通道) - 1)/2].延时 = value;
+        
+            gridView2.RefreshData();
+            Thread.Sleep(200);
+        }
+
+        public void Traverse初始化()
+        {
+            int Current通道 = Convert.ToInt32(_DataModule.textEdit_采集通道.Text);
+            ListTestModel[Current通道 - 1].移相 = "0°";
+            ListTestModel[Current通道 - 1].衰减 = "0dB";
+            List子阵Model[(Convert.ToInt32(Current通道) - 1) / 2].延时 = "0λ";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -182,7 +218,7 @@ namespace 延迟线收发组件_十六通道.Modules
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {       
             int[] select = gridView1.GetSelectedRows();
-            _Datamodule.textEdit_采集通道.Text = (select[0] + 1).ToString();
+            _DataModule.textEdit_采集通道.Text = (select[0] + 1).ToString();
             if (select.Length>1)
             {
                 gridView2.ClearSelection();
